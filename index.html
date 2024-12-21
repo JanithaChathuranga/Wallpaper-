@@ -45,3 +45,46 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+<!-- Category Dropdown -->
+<select id="categorySelect">
+    <option value="nature">Nature</option>
+    <option value="abstract">Abstract</option>
+    <option value="animals">Animals</option>
+    <option value="city">Cityscapes</option>
+</select>
+
+<input type="text" id="searchInput" placeholder="Search for wallpapers...">
+<button onclick="searchWallpapers()">Search</button>
+
+<script>
+function searchWallpapers() {
+    let query = document.getElementById('searchInput').value.toLowerCase();
+    let wallpapers = document.querySelectorAll('.wallpaper');
+    
+    wallpapers.forEach(function(wallpaper) {
+        let title = wallpaper.querySelector('p').textContent.toLowerCase();
+        if (title.includes(query)) {
+            wallpaper.style.display = 'block';
+        } else {
+            wallpaper.style.display = 'none';
+        }
+    });
+}
+</script>
+
+<!-- Rating Section -->
+<div class="rating">
+    <button onclick="rateWallpaper(1)">⭐</button>
+    <button onclick="rateWallpaper(2)">⭐⭐</button>
+    <button onclick="rateWallpaper(3)">⭐⭐⭐</button>
+    <button onclick="rateWallpaper(4)">⭐⭐⭐⭐</button>
+    <button onclick="rateWallpaper(5)">⭐⭐⭐⭐⭐</button>
+</div>
+
+<script>
+function rateWallpaper(rating) {
+    alert("You rated this wallpaper: " + rating + " stars.");
+}
+</script>
