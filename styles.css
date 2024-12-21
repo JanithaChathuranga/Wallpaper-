@@ -107,3 +107,13 @@ footer {
 .close-btn:hover {
     background-color: #f0f0f0;
 }
+
+
+/* Filter Effect */
+.wallpaper img {
+    transition: all 0.3s ease;
+}
+
+.wallpaper:hover img {
+    filter: brightness(1.2) contrast(1.1);
+}
