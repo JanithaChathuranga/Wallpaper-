@@ -88,3 +88,25 @@ function rateWallpaper(rating) {
     alert("You rated this wallpaper: " + rating + " stars.");
 }
 </script>
+
+
+<!-- Download Button -->
+<a href="wallpaper1.jpg" download="wallpaper1">
+    <button>Download Wallpaper</button>
+</a>
+
+<!-- Fullscreen Overlay -->
+<div class="fullscreen">
+    <img src="wallpaper1.jpg" alt="Wallpaper">
+    <button class="close-btn">Close</button>
+</div>
+
+<script>
+document.querySelector('.wallpaper img').addEventListener('click', function() {
+    document.querySelector('.fullscreen').style.display = 'block';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.fullscreen').style.display = 'none';
+});
+</script>
